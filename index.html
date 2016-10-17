@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--  The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable. -->
+    <meta name="参数" content="具体的描述">
+    <meta name="keywords" content="关键字，用于告诉搜索引擎，你网页的关键字。">
+    <meta name="description" content="网站内容的描述，用于告诉搜索引擎，你网站的主要内容。">
+    <!-- viewport移动端的窗口，常用于设计移动端网页，且不允许用户缩放页面 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--  robots定义搜索引擎爬虫的索引方式，具体讲解如下。-->
+    <meta name="robots" content="none">
+    <meta name="author" content="用于标注网页作者">
+    <meta name="copyright" content="用于标注版权信息">
+    <!--  revisit-after 搜索引擎爬虫重访时间。如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果
+    重访时间过短，爬虫将按它们的默认时间来访问。-->
+    <meta name="revisit-after" content="7 days">
+    <!-- rebderer指定双核浏览器默认以何种方式渲染页面 -->
+    <!-- 默认webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 默认IE兼容模式 -->
+    <meta name="renderer" content="ie-comp">
+    <!-- 默认IE标准模式 -->
+    <meta name="renderer" content="ie-stand">
+    <!-- 移动端将不会识别电话可拨打 -->
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="参数" content="具体的描述">
+    <!--  用于设定网页字符集，便于浏览器解析与渲染页面 -->
+    <meta charset="UTF-8">
+    <!--  X-UA-Compatible用于告知浏览器以何种版本来渲染页面，一般都设置为最新模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- cache-control指定请求和响应遵循的缓存机制。 -->
+    <meta http-equiv="cache-control" content="no-cache">
+    <!--  cache-control也可用于禁止当前页面在移动端浏览时，被百度自动转码。-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- expires用于设定网页的到期时间，过期后网页必须到服务器上重新传输 -->
+    <meta http-equiv="expires" content="Sunday 26 October 2016 01:00 GMT">
+    <!-- refresh网页将在设定时间内，自动刷新并跳向设定的网址 -->
+    <meta http-equiv="refresh" content="2;URL=https://github.com/zwy706670363/HTML-meta/">
+    <!-- Set-Cookie如果网页过期。那么这个网页存在本地的cookies也会被自动删除。 -->
+    <meta http-equiv="Set-Cookie" content="User=Lxxyx; path=/; expires=Sunday, 10-Jan-16 10:00:00 GMT">
+    <title>HTML meta标签与属性使用笔记</title>
+</head>
+<body>
+    <p>meta标签总共有两个属性，分别是http-equiv属性和name属性。</p>
+    <section>
+        <p>name属性主要用于描述网页，比如网页关键词，叙述等，对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取</p>
+        <p>当name值为robots（定义搜索引擎爬虫的索引方式）</p>
+        <p>说明：robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认值是all。</p>
+        <p>具体参数如下：</p>
+        <p>1.none:搜索引擎将忽略此网页，等价于noindex,nofollow。</p>
+        <p>2.noindex:搜索引擎不索引此网页。</p>
+        <p>3.nofollow:搜索引擎不继续通过此网页的链接索引搜索其他的网页。</p>
+        <p>4.all:搜索引擎将索引此网页与继续通过此网页的链接索引，等价于index,follow。</p>
+        <p>5.index:搜索引擎索引此网页。</p>
+        <p>6.follow:搜索引擎继续通过此网页的链接索引搜索其他的网页。</p>
+    </section>
+    <section>
+        <p>http-equiv属性相当于HTTP的作用</p>
+        <p>当http-equiv值为cache-control，用于指导浏览器如何缓存某个响应以及缓存多长时间。其content的参数值如下：</p>
+        <p>1.no-cache:先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。</p>
+        <p>2.no-store:不允许缓存，每次都要去服务器上，下载完整的响应。</p>
+        <p>3.public:缓存所有响应，但并非必须。因为max-age也可以达到相同效果。</p>
+        <p>4.private:只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）</p>
+        <p>5.max-age:表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如max-age=1000表示响应可以再缓存和重用1000秒</p>
+    </section>
+</body>
+</html>
